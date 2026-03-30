@@ -3,13 +3,14 @@ classDiagram
         +String name
         +int time_available
         +List pets
-        +generate_schedule()
     }
 
     class Pet {
         +String name
         +String species
         +List tasks
+        +add_task()
+        +remove_task()
     }
 
     class Task {
@@ -19,5 +20,16 @@ classDiagram
         +bool is_done
     }
 
+    class Scheduler {
+        +Owner owner
+        +collect_all_tasks()
+        +sort_by_priority()
+        +fit_to_time()
+        +generate_schedule()
+        +explain_plan()
+    }
+
     Owner "1" --> "many" Pet : owns
     Pet "1" --> "many" Task : has
+    Scheduler "1" --> "1" Owner : manages
+    Scheduler ..> Task : schedules

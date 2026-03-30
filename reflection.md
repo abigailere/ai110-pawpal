@@ -6,6 +6,8 @@
 
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
+    - I thought of creating an owner, pet, tasks, and sceduler class. the owner will have its name, time availability, and a list of pet objects. Each pet will have a list of task object and each task will havea  title, duration, priority and if it is done or not. The scheduler will manage tasks by taking in its lists
+    - after asking if there was anything to change, it suggested making a "low, "medium" and "high" priority have numerical weights to them for easier comparison and have the owner know about the scueduler. I made the change for priority but told it to add the other suggestions to the core features file as reminders when developing my code
 
 **b. Design changes**
 
