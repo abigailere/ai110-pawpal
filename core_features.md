@@ -73,9 +73,12 @@
 
 ## Reminders
 
-- **`Task` needs a `pet_name` field** — once tasks are flattened in `collect_all_tasks`, pet context is lost. `explain_plan` can't say which pet's task was skipped without it.
-- **`Owner.add_pet` must actually append to `self.pets`** — `Scheduler` depends on `owner.pets` being populated; if it's a stub, `collect_all_tasks` will always return nothing.
+- **`Task` needs a `pet_name` field** — once tasks are flattened in `collect_all_tasks`, pet context is lost. `explain_plan` can't say which pet's task was skipped without it. *DONE*
+
+- **`Owner.add_pet` must actually append to `self.pets`** — `Scheduler` depends on `owner.pets` being populated; if it's a stub, `collect_all_tasks` will always return nothing. *Done*
+
 - **`sort_by_priority` needs an explicit rank map** — sorting `"low"`, `"medium"`, `"high"` as strings gives the wrong order (`high < low < medium` lexicographically). Use `{"low": 0, "medium": 1, "high": 2}`.
 - **`fit_to_time` needs a tie-breaking rule** — if two tasks have equal priority and only one fits, define which wins (e.g., shorter duration takes precedence).
 - **`explain_plan` is disconnected from `generate_schedule`** — `explain_plan` needs the pre-fit `all_tasks` list, but `generate_schedule` doesn't capture or pass it. Save `all_tasks` before fitting and thread it through.
 - **Build `Owner` fully before instantiating `Scheduler`** — `Scheduler` takes a snapshot of `owner` at init time; pets added after won't be visible unless the reference is live.
+- **Consider whether `add_pet` should guard against duplicates** — current specs don't require it, but if the same pet object (or two pets with the same name) can be added twice, `collect_all_tasks` could return duplicate tasks and throw off the schedule. May want to add a duplicate check later.
