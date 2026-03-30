@@ -1,6 +1,6 @@
 # PawPal+ (Module 2 Project)
 
-A **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet!
+ **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet!
 
 ## Getting started
 

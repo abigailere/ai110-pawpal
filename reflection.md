@@ -26,7 +26,7 @@
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
     - The constraints i implemented were availability, priority, start time, and due date
-    - I thought priority and time available were whiat mattered most because that would determine how I schedule the tasks and which ones will not be scheduled
+    - I thought priority and time available were whiat mattered most because that would determine how I schedule the tasks and which ones will not be scheduled. 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
@@ -61,7 +61,6 @@
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
     - I am confident that my scheduler works as intended. All necessary features for a scheduler related to pet care are considered. If I had more time I would test if a task's time was embedded in another and see I could handle that in the scheduler. For example, if one task is from 8-9 and another is 8:15-8:30
-
 ---
 
 ## 5. Reflection
