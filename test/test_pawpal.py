@@ -63,10 +63,33 @@ def test_add_pet():
     print("test_add_pet passed")
 
 
+# Verifies that calling mark_complete() sets the task's is_done status to True
+def test_mark_complete():
+    task = Task(title="Walk", duration=30, priority="high")
+
+    task.mark_complete()
+
+    assert task.is_done == True
+    print("test_mark_complete passed")
+
+
+# Verifies that adding a task to a pet increases the pet's task count by one
+def test_add_task_increases_count():
+    pet = Pet(name="Buddy", species="dog")
+    count_before = len(pet.tasks)
+
+    pet.add_task(Task(title="Feed", duration=10, priority="high"))
+
+    assert len(pet.tasks) == count_before + 1
+    print("test_add_task_increases_count passed")
+
+
 if __name__ == "__main__":
     test_add_task()
     test_remove_task()
     test_remove_nonexistent_task()
     test_add_duplicate_pet()
     test_add_pet()
+    test_mark_complete()
+    test_add_task_increases_count()
     print("All tests passed!")
