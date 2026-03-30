@@ -1,0 +1,23 @@
+classDiagram
+    class Owner {
+        +String name
+        +int time_available
+        +List pets
+        +generate_schedule()
+    }
+
+    class Pet {
+        +String name
+        +String species
+        +List tasks
+    }
+
+    class Task {
+        +String title
+        +int duration
+        +String priority
+        +bool is_done
+    }
+
+    Owner "1" --> "many" Pet : owns
+    Pet "1" --> "many" Task : has
